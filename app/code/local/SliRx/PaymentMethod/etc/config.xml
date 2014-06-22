@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<config>
+	<modules>
+		<SliRx_PaymentMethod>
+			<version>0.1.0</version>
+		</SliRx_PaymentMethod>
+	</modules>
+	<global>
+		<models>
+			<slirx_paymentmethod>
+				<class>SliRx_PaymentMethod_Model</class>
+				<resourceModel>slirx_paymentmethod_resource</resourceModel>
+			</slirx_paymentmethod>
+			<slirx_paymentmethod_resource>
+				<class>SliRx_PaymentMethod_Model_Resource</class>
+			</slirx_paymentmethod_resource>
+		</models>
+		<helpers>
+			<slirx_paymentmethod>
+				<class>SliRx_PaymentMethod_Helper</class>
+			</slirx_paymentmethod>
+		</helpers>
+	</global>
+	<default>
+		<payment>
+			<test_payment_method>
+				<active>1</active>
+				<model>slirx_paymentmethod/testPaymentMethod</model>
+				<order_status>processing</order_status>
+				<title>SliRx Test Payment</title>
+			</test_payment_method>
+		</payment>
+	</default>
+</config>
