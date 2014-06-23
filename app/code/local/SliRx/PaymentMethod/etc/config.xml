@@ -2,10 +2,25 @@
 <config>
 	<modules>
 		<SliRx_PaymentMethod>
-			<version>0.1.0</version>
+			<version>0.1.1</version>
 		</SliRx_PaymentMethod>
 	</modules>
 	<global>
+		<fieldsets>
+			<sales_convert_quote_payment>
+				<billing_code>
+					<to_order_payment>*</to_order_payment>
+				</billing_code>
+				<billing_date>
+					<to_order_payment>*</to_order_payment>
+				</billing_date>
+			</sales_convert_quote_payment>
+		</fieldsets>
+		<blocks>
+			<slirx_paymentmethod>
+				<class>SliRx_PaymentMethod_Block</class>
+			</slirx_paymentmethod>
+		</blocks>
 		<models>
 			<slirx_paymentmethod>
 				<class>SliRx_PaymentMethod_Model</class>
@@ -15,6 +30,13 @@
 				<class>SliRx_PaymentMethod_Model_Resource</class>
 			</slirx_paymentmethod_resource>
 		</models>
+		<resources>
+			<slirx_paymentmethod_setup>
+				<setup>
+					<module>SliRx_PaymentMethod</module>
+				</setup>
+			</slirx_paymentmethod_setup>
+		</resources>
 		<helpers>
 			<slirx_paymentmethod>
 				<class>SliRx_PaymentMethod_Helper</class>

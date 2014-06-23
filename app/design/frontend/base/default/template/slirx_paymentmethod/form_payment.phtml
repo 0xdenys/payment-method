@@ -1,0 +1,23 @@
+<?php $code = $this->getMethodCode(); ?>
+<ul class="form-list" id="payment_form_<?= $code ?>" style="display:none;">
+    <li>
+        <label for="<?= $code ?>_billing_code" class="required">
+            <em>*</em><?= $this->__('Billing code') ?>:
+        </label>
+        <span class="input-box">
+            <input type="text" title="<?= $this->__('Billing code') ?>" class="input-text required-entry"
+                   id="<?= $code ?>_billing_code" name="payment[billing_code]"
+                   value="<?= $this->htmlEscape($this->getInfoData('billing_code')) ?>"/>
+        </span>
+    </li>
+    <li>
+        <label for="<?= $code ?>_billing_date" class="required">
+            <em>*</em><?= $this->__('Billing date') ?>:
+        </label>
+        <span class="input-box">
+            <input type="text" title="<?= $this->__('Billing date') ?>" class="input-text required-entry"
+                   id="<?= $code ?>_billing_date" name="payment[billing_date]"
+                   value="<?= $this->htmlEscape($this->getInfoData('billing_date')) ?>"/>
+        </span>
+    </li>
+</ul>
