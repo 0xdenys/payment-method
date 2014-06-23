@@ -37,6 +37,14 @@
 							<show_in_website>1</show_in_website>
 							<show_in_store>0</show_in_store>
 						</title>
+						<description translate="label">
+							<label>Description</label>
+							<frontend_type>textarea</frontend_type>
+							<sort_order>3</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>0</show_in_store>
+						</description>
 					</fields>
 				</test_payment_method>
 			</groups>

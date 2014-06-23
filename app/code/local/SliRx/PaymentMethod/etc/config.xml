@@ -50,6 +50,7 @@
 				<model>slirx_paymentmethod/testPaymentMethod</model>
 				<order_status>processing</order_status>
 				<title>SliRx Test Payment</title>
+				<description>Awesome information field</description>
 			</test_payment_method>
 		</payment>
 	</default>

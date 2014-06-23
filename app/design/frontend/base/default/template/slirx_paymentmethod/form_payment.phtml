@@ -20,4 +20,10 @@
                    value="<?= $this->htmlEscape($this->getInfoData('billing_date')) ?>"/>
         </span>
     </li>
+    <li>
+        <div>
+            <?= $this->getMethod()->getConfigData('description'); ?>
+        </div>
+    </li>
 </ul>
+
