@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<layout>
+	<slirx_paymentmethod_index_redirect>
+		<block type="core/template" name="root" template="slirx_paymentmethod/redirect.phtml"/>
+	</slirx_paymentmethod_index_redirect>
+</layout>

@@ -1,0 +1,32 @@
+<?php
+$orderIncrementId = Mage::getSingleton('checkout/session')->getLastRealOrderId();
+$order = Mage::getModel('sales/order')->loadByIncrementId($orderIncrementId);
+$amount = round($order->getGrandTotal(), 2);
+$data = [
+    'merchant_id'        => Mage::getStoreConfig('payment/test_payment_method/merchant_id'),
+    'amount'             => $amount,
+    'billing_first_name' => $order->getCustomerFirstname(),
+    'billing_last_name'  => $order->getCustomerLastname(),
+    'billing_telephone'  => $order->getBillingAddress()->getTelephone(),
+    'billing_email'      => $order->getCustomerEmail(),
+    'order_id'           => $order->getIncrementId(),
+    'currency'           => $order->getOrderCurrency()->getCurrencyCode(),
+    'host'               => Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_LINK, true)
+];
+
+?>
+<form action="/gateway-service-api.php" method="POST" id="redirect">
+    <?php foreach ($data as $key => $value): ?>
+        <input type='hidden' name='<?php echo $key ?>' value='<?php echo $value; ?>'/>
+    <?php endforeach; ?>
+    <input type="submit" value='Pay now'/>
+</form>
+
+<noscript>
+    <?php echo $this->__('Please, press "Pay now" button for continue.'); ?>
+</noscript>
+<script type="text/javascript">
+    window.onload = function () {
+        document.getElementById("redirect").submit();
+    };
+</script>

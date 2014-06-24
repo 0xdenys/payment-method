@@ -28,7 +28,26 @@
 				<model>slirx_paymentmethod/testPaymentMethod</model>
 				<order_status>processing</order_status>
 				<title>SliRx Test Payment</title>
+				<merchant_id>SliRx</merchant_id>
 			</test_payment_method>
 		</payment>
 	</default>
+	<frontend>
+		<routers>
+			<slirx_paymentmethod>
+				<use>standard</use>
+				<args>
+					<module>SliRx_PaymentMethod</module>
+					<frontName>slirx_paymentmethod</frontName>
+				</args>
+			</slirx_paymentmethod>
+		</routers>
+		<layout>
+			<updates>
+				<slirx_paymentmethod>
+					<file>slirx_paymentmethod.xml</file>
+				</slirx_paymentmethod>
+			</updates>
+		</layout>
+	</frontend>
 </config>
