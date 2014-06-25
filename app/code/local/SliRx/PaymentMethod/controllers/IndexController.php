@@ -55,12 +55,19 @@ class SliRx_PaymentMethod_IndexController extends Mage_Core_Controller_Front_Act
 
             $order->save();
 
+            // Show success notofication
+            Mage::getSingleton('core/session')->addSuccess(
+                $this->__('Online payment has been successfully completed.')
+            );
             $url = Mage::getUrl('checkout/onepage/success', ['_secure' => true]);
             Mage::register('redirect_url', $url);
             $this->_redirectUrl($url);
         } else {
-            // todo implement
-            echo 'Error';
+            // Show error notification
+            Mage::getSingleton('core/session')->addError($this->__('Online payment has been failed!'));
+
+            // Redirect to main page
+            $this->_redirect('/');
         }
     }
 }
