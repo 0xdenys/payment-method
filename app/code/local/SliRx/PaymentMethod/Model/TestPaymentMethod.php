@@ -16,12 +16,6 @@ class SliRx_PaymentMethod_Model_TestPaymentMethod extends Mage_Payment_Model_Met
      */
     public function getOrderPlaceRedirectUrl()
     {
-        $methods = get_class_methods($this);
-        $vars = get_class_vars($this);
-//        if ((int)$this->_getAmount() > 0) {
         return Mage::getUrl('slirx_paymentmethod/index/redirect', array('_secure' => true));
-//        } else {
-//            return false;
-//        }
     }
 }
